@@ -1,6 +1,5 @@
 import * as openpgp from 'openpgp';
 import * as fs from 'fs/promises';
-import { Stream } from 'stream';
 
 async function importPublicKeyFromFile(filePath: string): Promise<string> {
     try {
