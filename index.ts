@@ -18,6 +18,7 @@ async function encryptObjectWithPGP(obj: any, publicKeyFilePath: string) {
   try {
     const jsonString = JSON.stringify(obj);
     console.log(jsonString)
+
     // Import the recipient's public key from a file
     const publicKeyArmored = await importKeyFromFile(publicKeyFilePath);
     const publicKey = await openpgp.readKey({ armoredKey: publicKeyArmored });
@@ -62,7 +63,8 @@ async function sendEncryptedMessageToAPI(encryptedMessage: any, apiEndpoint: str
 
 async function decryptMessage(encryptedMessage: string, privateKeyFilePath: string): Promise<string> {
   try {
-    const passphrase = ''
+    // TODO: change secret
+    const passphrase = '"#P@ssw0rd#"'
     const privateKeyArmored = await importKeyFromFile(privateKeyFilePath);
     const privateKey = await openpgp.decryptKey({
       privateKey: await openpgp.readPrivateKey({ armoredKey: privateKeyArmored }),
@@ -70,7 +72,7 @@ async function decryptMessage(encryptedMessage: string, privateKeyFilePath: stri
     });
 
     const message = await openpgp.readMessage({
-      armoredMessage: encryptedMessage
+      armoredMessage: "-----BEGIN PGP MESSAGE-----/n/n" + encryptedMessage + "/n-----END PGP MESSAGE-----"
     });
 
     const { data: decrypted } = await openpgp.decrypt({
@@ -92,7 +94,7 @@ const dataToEncrypt = {
   deviceId: "000-111-222-333"
 }
 
-const accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoiWElYNFUwdi9XbXFmcGpCQWdnb0dmcEtNOWx3S0ZLb1FPTG9QVmpYUXd3WllEdGZ3YjF4TWlFTEtaMjFJZ3JLTnlCK0Fjc3VwOU5hK3ZBNkFWTm9Sb2RvSDBjeEdhck1FNWVYZTA4eW9LeGc9IiwibmJmIjoxNjk5MjYzNjc5LCJleHAiOjE2OTkyNjU0NzksImlhdCI6MTY5OTI2MzY3OSwiaXNzIjoiR2FjLUFwaSIsImF1ZCI6IkdhYy1DbGllbnQifQ.-OH_kohEquoBaEizrPlyYQJ_RZYfZSwCEXUReb63T3g';
+const accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoiWElYNFUwdi9XbXFmcGpCQWdnb0dmcWRhU0k2ZGYxSXZSZEV6QlhZblhDL1JkNHJBMnZaRlRPWHl0Vk5YRHNpdExyeVdHeWR6TnV5N3J2cGVIb3dyS1lVbURmQjRkU2NXYTZDOEZNbUhPK2M9IiwibmJmIjoxNjk5MzI1NjU4LCJleHAiOjE2OTkzMjc0NTgsImlhdCI6MTY5OTMyNTY1OCwiaXNzIjoiR2FjLUFwaSIsImF1ZCI6IkdhYy1DbGllbnQifQ.8rf-Bk2UnaVHz-XQRuWTdgY0u1pgDQyDz7HDjGWas8M';
 const apiEndpoint = 'https://sandbox-gac.sandbox.2c2p.net/gac/api/v2.1/customers/verify-user-login-by-email'
 
 encryptObjectWithPGP(dataToEncrypt, publicKeyFilePath)
