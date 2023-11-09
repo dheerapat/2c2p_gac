@@ -1,12 +1,15 @@
+import { aesEncrypt } from "./aesEncrypt";
+import { readImage } from "./readImage";
+
 let data = {
     verificationCode: "",
     mobileCountry: "66",
     mobileNo: "880374870",
     email: "dheerapat.t@socket9.com",
-    citizenId: "",
-    laserId: "",
+    citizenId: aesEncrypt("1319900459658"),
+    laserId: aesEncrypt(""),
     idCardExpiryDate: "",
-    idCardImage: "",
+    idCardImage: readImage("dheeto_id.jpg"),
     title: "",
     gender: "",
     firstNameEN: "",
