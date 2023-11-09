@@ -66,14 +66,14 @@ async function decryptMessage(encryptedMessage: string, privateKeyFilePath: stri
   try {
     const msg = `-----BEGIN PGP MESSAGE-----\n\n${encryptedMessage}\n-----END PGP MESSAGE-----`
 
-    const readableStream = new ReadableStream({
-      start(controller) {
-        controller.enqueue(msg);
-        controller.close();
-      }
-    });
+    // const readableStream = new ReadableStream({
+    //   start(controller) {
+    //     controller.enqueue(msg);
+    //     controller.close();
+    //   }
+    // });
 
-    const message = await openpgp.readMessage({armoredMessage: readableStream})
+    // const message = await openpgp.readMessage({armoredMessage: readableStream})
 
     // TODO: change secret
     const passphrase = '"#P@ssw0rd#"'
@@ -83,9 +83,9 @@ async function decryptMessage(encryptedMessage: string, privateKeyFilePath: stri
       passphrase
     });
 
-    // const message = await openpgp.readMessage({
-    //   armoredMessage: msg
-    // });
+    const message = await openpgp.readMessage({
+      armoredMessage: msg
+    });
 
     const { data: decrypted } = await openpgp.decrypt({
       message,
