@@ -16,50 +16,50 @@ let data = {
     dateOfBirth: "",
     customerImage: "",
     address: {
-      address1: "",
-      address2: null,
-      countryId: "",
-      state: null,
-      PostalCode: "",
-      addressDefine1: null,
-      addressDefine2: null,
-      stateId: "",
-      districtId: "",
-      district: "",
-      subdistrictId: "",
-      subdistrict: ""
+        address1: "",
+        address2: null,
+        countryId: "",
+        state: null,
+        PostalCode: "",
+        addressDefine1: null,
+        addressDefine2: null,
+        stateId: "",
+        districtId: "",
+        district: "",
+        subdistrictId: "",
+        subdistrict: ""
     },
     mailingAddress: {
-      address1: "",
-      address2: null,
-      countryId: "",
-      state: null,
-      PostalCode: "",
-      addressDefine1: null,
-      addressDefine2: null,
-      stateId: "",
-      districtId: "",
-      district: "",
-      subdistrictId: "",
-      subdistrict: ""
+        address1: "",
+        address2: null,
+        countryId: "",
+        state: null,
+        PostalCode: "",
+        addressDefine1: null,
+        addressDefine2: null,
+        stateId: "",
+        districtId: "",
+        district: "",
+        subdistrictId: "",
+        subdistrict: ""
     },
     occupationId: "",
     occupation: "",
     workPlace: "",
     businessTypeId: "",
     workAddress: {
-      address1: "",
-      address2: null,
-      countryId: "",
-      state: null,
-      PostalCode: "",
-      addressDefine1: null,
-      addressDefine2: null,
-      stateId: "",
-      districtId: "",
-      district: "",
-      subdistrictId: "",
-      subdistrict: ""
+        address1: "",
+        address2: null,
+        countryId: "",
+        state: null,
+        PostalCode: "",
+        addressDefine1: null,
+        addressDefine2: null,
+        stateId: "",
+        districtId: "",
+        district: "",
+        subdistrictId: "",
+        subdistrict: ""
     },
     userDefined1: null,
     userDefined2: null,
@@ -75,23 +75,23 @@ let data = {
     walletPurposeId: "",
     walletPurposeText: "",
     consentList: [
-      {
-        consentId: "",
-        acceptFlag: true,
-        userDefined1: null,
-        userDefined2: null,
-        consentType: "",
-        consentDate: ""
-      },
-      {
-        consentId: "",
-        acceptFlag: true,
-        userDefined1: null,
-        userDefined2: null,
-        consentType: "",
-        consentDate: ""
-      }
+        {
+            consentId: "",
+            acceptFlag: true,
+            userDefined1: null,
+            userDefined2: null,
+            consentType: "",
+            consentDate: ""
+        },
+        {
+            consentId: "",
+            acceptFlag: true,
+            userDefined1: null,
+            userDefined2: null,
+            consentType: "",
+            consentDate: ""
+        }
     ],
     externalId: "",
     enableManualApproval: false
-  };
+};
