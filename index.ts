@@ -89,6 +89,9 @@ async function decryptMessage(encryptedMessage: string, privateKeyFilePath: stri
 
     const { data: decrypted } = await openpgp.decrypt({
       message,
+      config: {
+        allowInsecureDecryptionWithSigningKeys: true,
+      },
       decryptionKeys: privateKey
     });
 
