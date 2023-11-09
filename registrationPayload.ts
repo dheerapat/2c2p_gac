@@ -6,7 +6,7 @@ let data = {
     mobileCountry: "66",
     mobileNo: "880374870",
     email: "dheerapat.t@socket9.com",
-    citizenId: aesEncrypt("1319900459658"),
+    citizenId: "U2FsdGVkX1/VNl5NiAeLzKzf+LvafM8Udz8YwCeqHHc=",
     laserId: aesEncrypt(""),
     idCardExpiryDate: "",
     idCardImage: readImage("dheeto_id.jpg"),
@@ -17,7 +17,7 @@ let data = {
     firstNameLocal: "",
     lastNameLocal: "",
     dateOfBirth: "",
-    customerImage: "",
+    customerImage: readImage("dheeto.jpg"),
     address: {
         address1: "",
         address2: null,
