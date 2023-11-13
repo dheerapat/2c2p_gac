@@ -1,0 +1,91 @@
+{
+    "districts": [
+        {
+            "id": 811,
+            "name": "Muang Surin",
+            "nameTH": "เมืองสุรินทร์"
+        },
+        {
+            "id": 812,
+            "name": "Kap Choeng",
+            "nameTH": "กาบเชิง"
+        },
+        {
+            "id": 813,
+            "name": "Chom Phra",
+            "nameTH": "จอมพระ"
+        },
+        {
+            "id": 814,
+            "name": "Chumphon Buri",
+            "nameTH": "ชุมพลบุรี"
+        },
+        {
+            "id": 815,
+            "name": "Tha Tum",
+            "nameTH": "ท่าตูม"
+        },
+        {
+            "id": 816,
+            "name": "Buachet",
+            "nameTH": "บัวเชด"
+        },
+        {
+            "id": 817,
+            "name": "Pra Sat",
+            "nameTH": "ปราสาท"
+        },
+        {
+            "id": 818,
+            "name": "Rattana Buri",
+            "nameTH": "รัตนบุรี"
+        },
+        {
+            "id": 819,
+            "name": "Lam Duon",
+            "nameTH": "ลำดวน"
+        },
+        {
+            "id": 820,
+            "name": "Sikhoraphum",
+            "nameTH": "ศีขรภูมิ"
+        },
+        {
+            "id": 821,
+            "name": "Sanom",
+            "nameTH": "สนม"
+        },
+        {
+            "id": 822,
+            "name": "Sang Kha",
+            "nameTH": "สังขะ"
+        },
+        {
+            "id": 823,
+            "name": "Samrong Thap",
+            "nameTH": "สำโรงทาบ"
+        },
+        {
+            "id": 824,
+            "name": "Sri Narong",
+            "nameTH": "ศรีณรงค์"
+        },
+        {
+            "id": 825,
+            "name": "Phanom Dong Rak",
+            "nameTH": "พนมดงรัก"
+        },
+        {
+            "id": 826,
+            "name": "Khwao Sinarin",
+            "nameTH": "เขวาสินรินทร์"
+        },
+        {
+            "id": 827,
+            "name": "Nhon Narai",
+            "nameTH": "โนนนารายณ์"
+        }
+    ],
+    "responseCode": "000",
+    "responseDescription": "Success"
+}
