@@ -9,4 +9,4 @@ export function aesEncrypt(message: string) {
     return ciphertext.toString();
 }
 
-console.log(aesEncrypt(""))
+// console.log(aesEncrypt(""))
