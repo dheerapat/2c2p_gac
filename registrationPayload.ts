@@ -6,18 +6,20 @@ export async function DataRegister() {
     let data = {
         verificationCode: "4ba900dc-62b6-4788-8a17-88160ea51161",
         mobileCountry: "66",
-        mobileNo: "927830700",
+        mobileNo: "",
         email: "test@2c2p.com",
         citizenId: aesEncrypt(""),
         laserId: aesEncrypt(""),
-        idCardExpiryDate: "2026-04-3",
+        idCardExpiryDate: "2026-04-03",
+        idCardImage: await readImage("ID.png"),
         title: null,
         gender: null,
         firstNameEN: null,
         lastNameEN: null,
-        firstNameLocal: "เจษฎา",
-        lastNameLocal: "จังพานิช",
-        dateOfBirth: "2000-04-04",
+        firstNameLocal: "",
+        lastNameLocal: "",
+        dateOfBirth: "",
+        customerImage: await readImage("self.png"),
         address: {
             address1: "293 หมู่ 18 ตำบลนอกเมือง",
             address2: null,
@@ -29,7 +31,7 @@ export async function DataRegister() {
             stateId: 68,
             districtId: 811,
             district: null,
-            subdistrictId: null,
+            subdistrictId: 1945,
             subdistrict: null
         },
         mailingAddress: {
@@ -43,25 +45,25 @@ export async function DataRegister() {
             stateId: 68,
             districtId: 811,
             district: null,
-            subdistrictId: null,
+            subdistrictId: 1945,
             subdistrict: null
         },
-        occupationId: 34,
+        occupationId: 21,
         occupation: null,
         workPlace: "Socket9",
         businessTypeId: 1,
         workAddress: {
             address1: "486/152-154 ถนนเพชรบุรี แขวงถนนเพชรบุรี เขตราชเทวี กรุงเทพมหานคร 10400",
             address2: null,
-            countryId: null,
+            countryId: "THA",
             state: null,
             PostalCode: null,
             addressDefine1: null,
             addressDefine2: null,
-            stateId: null,
-            districtId: null,
+            stateId: 68,
+            districtId: 811,
             district: null,
-            subdistrictId: null,
+            subdistrictId: 1945,
             subdistrict: null
         },
     userDefined1: null,
@@ -98,6 +100,6 @@ export async function DataRegister() {
         ZolozFaceCaptureTransId: null
     };
     const jsonString = JSON.stringify(data);
-    // console.log(jsonString);
+    console.log(await readImage("self.png"))
     return jsonString
 }

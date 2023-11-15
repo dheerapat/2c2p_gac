@@ -17,7 +17,7 @@ export async function importKeyFromFile(filePath: string): Promise<string> {
 export async function encryptObjectWithPGP(obj: any, publicKeyFilePath: string) {
   try {
     const jsonString = JSON.stringify(obj);
-    console.log(jsonString)
+    // console.log(jsonString)
 
     // Import the recipient's public key from a file
     const publicKeyArmored = await importKeyFromFile(publicKeyFilePath);
