@@ -10,8 +10,9 @@ export function aesEncrypt(message: string) {
 }
 
 export function aesDecrypt(message: string) {
-    let ciphertext = cryptoJS.AES.decrypt(message, secret, { iv: customIV });
-    return ciphertext.toString(cryptoJS.enc.Base64);
+    let decrypttext = cryptoJS.AES.decrypt(message, secret, { iv: customIV });
+    let decodedMessage = decrypttext.toString(cryptoJS.enc.Utf8); // Decode Base64
+    return decodedMessage;
 }
 
 // console.log(aesEncrypt(""))
