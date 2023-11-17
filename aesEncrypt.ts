@@ -1,7 +1,7 @@
 import cryptoJS from "crypto-js";
 
 // add this to env file
-const secret : cryptoJS.lib.WordArray = cryptoJS.enc.Base64.parse ("65MeaID67UmBlZ/Nb8RCOfUAF3gkoproJra9L+J9fmM=")
+const secret : cryptoJS.lib.WordArray = cryptoJS.enc.Base64.parse("65MeaID67UmBlZ/Nb8RCOfUAF3gkoproJra9L+J9fmM=")
 const customIV: cryptoJS.lib.WordArray = cryptoJS.enc.Base64.parse("Iye16+LR+plUr/qJQaGrkw==")
 
 export function aesEncrypt(message: string) {
@@ -15,4 +15,7 @@ export function aesDecrypt(message: string) {
     return decodedMessage;
 }
 
-// console.log(aesEncrypt(""))
+console.log(aesEncrypt("4111111111111111"))
+console.log(aesEncrypt("12"))
+console.log(aesEncrypt("2025"))
+console.log(aesEncrypt("123"))

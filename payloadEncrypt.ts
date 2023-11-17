@@ -14,17 +14,22 @@ export async function importKeyFromFile(filePath: string): Promise<string> {
   }
 }
 
+export async function encodeStringToUtf8Bytes(message: string) {
+  const encoder = new TextEncoder();
+  return encoder.encode(message);
+}
+
 export async function encryptObjectWithPGP(obj: any, publicKeyFilePath: string) {
   try {
     const jsonString = JSON.stringify(obj);
     // console.log(jsonString)
-
+    const utf8Bytes = await encodeStringToUtf8Bytes(jsonString);
     // Import the recipient's public key from a file
     const publicKeyArmored = await importKeyFromFile(publicKeyFilePath);
     const publicKey = await openpgp.readKey({ armoredKey: publicKeyArmored });
 
     const encryptedData = await openpgp.encrypt({
-      message: await openpgp.createMessage({ text: jsonString }),
+      message: await openpgp.createMessage({ binary: utf8Bytes }),
       encryptionKeys: publicKey
     });
 
