@@ -1,27 +1,27 @@
 import { aesEncrypt } from "./aesEncrypt";
 import { readImage } from "./readImage";
-
-
+ 
+ 
 export async function DataRegister() {
     let data = {
-        verificationCode: "4ba900dc-62b6-4788-8a17-88160ea51161",
+        verificationCode: "5afe06d5-c367-4fda-9e48-387fdba15770",
         mobileCountry: "66",
         mobileNo: "",
-        email: "test@2c2p.com",
-        citizenId: aesEncrypt(""),
-        laserId: aesEncrypt(""),
-        idCardExpiryDate: "2026-04-03",
-        idCardImage: await readImage("ID.png"),
+        email: "",
+        citizenId: await aesEncrypt(""),
+        laserId: await aesEncrypt(""),
+        idCardExpiryDate: "",
+        idCardImage: await readImage("id.png"),
         title: null,
         gender: null,
         firstNameEN: null,
         lastNameEN: null,
-        firstNameLocal: "",
-        lastNameLocal: "",
-        dateOfBirth: "",
+        firstNameLocal: "ญาดา",
+        lastNameLocal: "สิงห์ทอง",
+        dateOfBirth: "1997-05-17",
         customerImage: await readImage("self.png"),
         address: {
-            address1: "293 หมู่ 18 ตำบลนอกเมือง",
+            address1: "99 หมู่ 18 ตำบลนอกเมือง",
             address2: null,
             countryId: "THA",
             state: null,
@@ -35,7 +35,7 @@ export async function DataRegister() {
             subdistrict: null
         },
         mailingAddress: {
-            address1: "293 หมู่ 18 ตำบลนอกเมือง",
+            address1: "99 หมู่ 18 ตำบลนอกเมือง",
             address2: null,
             countryId: "THA",
             state: null,
@@ -66,7 +66,7 @@ export async function DataRegister() {
             subdistrictId: 1945,
             subdistrict: null
         },
-    userDefined1: null,
+        userDefined1: null,
         userDefined2: null,
         userDefined3: null,
         userDefined4: null,
@@ -99,7 +99,5 @@ export async function DataRegister() {
         ZolozIDRecogTransId: null,
         ZolozFaceCaptureTransId: null
     };
-    const jsonString = JSON.stringify(data);
-    console.log(await readImage("self.png"))
-    return jsonString
+    return data
 }

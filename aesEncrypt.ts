@@ -14,8 +14,3 @@ export function aesDecrypt(message: string) {
     let decodedMessage = decrypttext.toString(cryptoJS.enc.Utf8); // Decode Base64
     return decodedMessage;
 }
-
-console.log(aesEncrypt("4111111111111111"))
-console.log(aesEncrypt("12"))
-console.log(aesEncrypt("2025"))
-console.log(aesEncrypt("123"))

@@ -22,9 +22,7 @@ export async function encodeStringToUtf8Bytes(message: string) {
 export async function encryptObjectWithPGP(obj: any, publicKeyFilePath: string) {
   try {
     const jsonString = JSON.stringify(obj);
-    // console.log(jsonString)
     const utf8Bytes = await encodeStringToUtf8Bytes(jsonString);
-    // Import the recipient's public key from a file
     const publicKeyArmored = await importKeyFromFile(publicKeyFilePath);
     const publicKey = await openpgp.readKey({ armoredKey: publicKeyArmored });
 
